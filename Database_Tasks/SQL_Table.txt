@@ -1,0 +1,104 @@
+create database GCOEJ;
+show databases;
+
+use Gcoej;
+create table ENTC(
+s_num int(6),
+s_name varchar(50),
+s_contact int(10),
+s_email varchar(50)
+
+);
+create table Civil(
+s_num int(6),
+s_name varchar(50),
+s_contact int(10),
+s_email varchar(50)
+
+);
+create table cse(
+s_num int(6),
+s_name varchar(50),
+s_contact int(10),
+s_email varchar(50)
+
+);
+show tables from GCOEJ;
+
+insert into ENTC values
+(521,'Ragini',895677, 'priyanka123@gmail.com'),
+(522,'Pratiksha',6754673, 'pratiksha123@gmail.com'),
+(523,'Rohini',12374, 'rohini23@gmail.com'),
+(524,'Mahima',70388, 'mahima23@gmail.com'),
+(525,'Manju',87372, 'manju123@gmail.com');
+select * from ENTC;
+
+insert into civil values
+(531,'Manisha',925472, 'manisha123@gmail.com'),
+(532,'Visha',92546, 'vishal123@gmail.com'),
+(533,'Aaditya',925464, 'aadi423@gmail.com'),
+(534,'Aakash',75546, 'aakash23@gmail.com'),
+(535,'Neha',836372, 'neha5123@gmail.com');
+select * from civil;
+
+insert into cse values
+(301,'Riya',92542, 'riya123@gmail.com'),
+(302,'Sachin',94575, 'sachin313@gmail.com'),
+(303,'Rutuja',908374, 'rutuja783@gmail.com'),
+(304,'Prachi',875473, 'prachi@gmail.com'),
+(305,'Surbhi',95362, 'surbhi43@gmail.com');
+select * from cse;
+
+desc ENTC ;
+select * from ENtc;
+create table ENTC(
+s_aadhar varchar(12)
+
+);
+
+insert into ENTC values
+(522,'Mansi',92578, 'mansi123@gmail.com');
+alter table ENTC add (s_section varchar(12) default 'A1' ); 
+select * from ENTC;
+alter table ENTC change column s_num roll varchar(5);
+
+delete from ENTC where roll=522;
+#one data update
+update mech SET s_name='Swati' where roll=521;
+# update multiple data 
+update ENTC SET s_name='swati',s_email='swati@gmail.com' where roll=521;
+
+
+
+alter table civil add (age int (5) default 17);
+update civil set age=18 where s_num=231;
+update civil set age=age+1; 
+select * from civil;
+
+truncate table entc;
+
+create table edubrige(
+s_num int(6),
+s_name varchar(50),
+s_contact int(10),
+s_email varchar(50)
+
+);
+insert into edubrige values
+(201,'Mohini',75542, 'mohini123@gmail.com'),
+(202,'Bhagyashri',89575, 'bhagyashri923@gmail.com'),
+(203,'KArina',565374, 'karina923@gmail.com'),
+(204,'Ritika',805473, 'ritika23@gmail.com'),
+(205,'mukesh',98372, 'mukesh923@gmail.com');
+
+savepoint A;
+insert into edubrige values
+(206,'Nikhil',98687,'nikhil12@gmail.com');
+
+savepoint B;
+rollback;
+rollback to A;
+select * from edubrige;
+
+
+
